@@ -1,0 +1,37 @@
+<!-- Combustion Engineering PWR
+
+3800 MWt // 1300 MWe // eps = 34.2%
+Coolant/Moderator = H20
+Active Core Volume (l) = 40,000 
+Avg core power density (kW/l) = 95 
+Fuel Weight (kg) = 103,000 
+Num Assem = 241
+-> weight per assem ~ 427 kg
+BU (GWd/MTU) = 33
+Conversion Ratio = 0.5
+Fuel array = 16 x 16
+Fuel enrichment = 1.9 / 2.4 / 2.9
+
+-->
+
+<facility>
+      <name>ce_pwr</name>
+      <config>
+        <Reactor>
+          <fuel_inrecipes>  <val>uox_recipe</val>       </fuel_inrecipes>
+          <fuel_outrecipes> <val>used_uox_recipe</val>  </fuel_outrecipes>
+          <fuel_incommods>  <val>uox</val>                   </fuel_incommods>
+          <fuel_outcommods> <val>used_uox</val>             </fuel_outcommods>
+          <fuel_prefs>      <val>1.0</val>                   </fuel_prefs>
+          <cycle_time>18</cycle_time>
+          <!-- Average refueling was 43 days (Barq, NEI. 2012) -->
+          <refuel_time>1</refuel_time>
+          <!-- 103,000 / 241~ 427 kg -->
+          <assem_size>427</assem_size>
+          <n_assem_core>241</n_assem_core>
+          <!-- 241/3 ~ 80 assem/batch -->
+          <n_assem_batch>80</n_assem_batch>
+          <power_cap>1300</power_cap>
+        </Reactor>
+      </config>
+  </facility>

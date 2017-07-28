@@ -1,0 +1,43 @@
+<!-- CANada Deuterium Uranium Reactor 6
+(CANDU 6 Technical Summary)
+1612 MWt // 700 MWe // eps = 31%
+Coolant / Moderator = D20
+Active Core Volume (l) = 130,000 
+Avg core power density (kW/l) = 12.4 
+Mass of Bundle = 19 kg
+Channels = 380
+Bundles per channel = 12
+BU (GWd/MTU) = 10
+Conversion Ratio = 0.45
+Fuel enrichment = nat U
+
+-->
+
+<!--
+(Rouben, Fuel Management in CANDU, 1997)
+CANDUs have continuous, on-line refueling,
+where "several refueling operation are carried out daily,"
+with "four or eight fresh bundles are added at each refueling"
+-->
+
+<facility>
+      <name>htgr</name>
+      <config>
+        <Reactor>
+          <fuel_inrecipes>  <val>nat_u_recipe</val>       </fuel_inrecipes>
+          <fuel_outrecipes> <val>used_candu_recipe</val>  </fuel_outrecipes>
+          <fuel_incommods>  <val>nat_u</val>                   </fuel_incommods>
+          <fuel_outcommods> <val>used_candu</val>             </fuel_outcommods>
+          <fuel_prefs>      <val>1.0</val>                   </fuel_prefs>
+          <cycle_time>1</cycle_time>
+          <!-- on-line, continuous refueling -->
+          <refuel_time>0</refuel_time>
+          <assem_size>19</assem_size>
+          <!-- 380 channels * 12 bundles per channel = 4560 -->
+          <n_assem_core>4560</n_assem_core>
+          <!-- 2 refueling * 6 bundles * 30 days = 360 -->
+          <n_assem_batch>360</n_assem_batch>
+          <power_cap>700</power_cap>
+        </Reactor>
+      </config>
+  </facility>

@@ -1,0 +1,37 @@
+<!-- Babcock & Wilcox PWR
+
+3600 MWt // 1200 MWe // eps = 33.3%
+Coolant/Moderator = H20
+Active Core Volume (l) = 37,600 
+Avg core power density (kW/l) = 95.7 
+Fuel Weight (kg) = 94,900 
+Num Assem = 205
+-> weight per assem ~ 463 kg
+BU (GWd/MTU) = 33
+Conversion Ratio = 0.5
+Fuel array = 17 x 17
+Fuel enrichment = 2.91
+
+-->
+
+<facility>
+      <name>bw_pwr</name>
+      <config>
+        <Reactor>
+          <fuel_inrecipes>  <val>uox_recipe</val>       </fuel_inrecipes>
+          <fuel_outrecipes> <val>used_uox_recipe</val>  </fuel_outrecipes>
+          <fuel_incommods>  <val>uox</val>                   </fuel_incommods>
+          <fuel_outcommods> <val>used_uox</val>             </fuel_outcommods>
+          <fuel_prefs>      <val>1.0</val>                   </fuel_prefs>
+          <cycle_time>18</cycle_time>
+          <!-- Average refueling was 43 days (Barq, NEI. 2012) -->
+          <refuel_time>1</refuel_time>
+          <!-- 94,900/205 ~ 463 kg -->
+          <assem_size>463</assem_size>
+          <n_assem_core>205</n_assem_core>
+          <!-- 205/3 ~ 68 assem/batch -->
+          <n_assem_batch>68</n_assem_batch>
+          <power_cap>1200</power_cap>
+        </Reactor>
+      </config>
+  </facility>

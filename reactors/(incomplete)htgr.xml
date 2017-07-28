@@ -1,0 +1,37 @@
+<!-- High Temperature Gas Reactor
+
+3000 MWt // 1170 MWe // eps = 39%
+Coolant = He
+Moderator = Graphite
+Active Core Volume (l) = 354,000 
+Avg core power density (kW/l) = 8.4 
+Fuel Weight (kg) = 39,000
+Num Assem = 3944
+BU (GWd/MTU) = 98
+Conversion Ratio = 0.7
+Fuel array = 132 pins
+Fuel enrichment = 93.5
+
+-->
+
+<facility>
+      <name>htgr</name>
+      <config>
+        <Reactor>
+          <fuel_inrecipes>  <val>uox_recipe</val>       </fuel_inrecipes>
+          <fuel_outrecipes> <val>used_uox_recipe</val>  </fuel_outrecipes>
+          <fuel_incommods>  <val>uox</val>                   </fuel_incommods>
+          <fuel_outcommods> <val>used_uox</val>             </fuel_outcommods>
+          <fuel_prefs>      <val>1.0</val>                   </fuel_prefs>
+          <cycle_time>18</cycle_time>
+          <!-- Average refueling was 43 days (Barq, NEI. 2012) -->
+          <refuel_time>1</refuel_time>
+          <!-- 90200/193 ~ 467 kg -->
+          <assem_size>467</assem_size>
+          <n_assem_core>193</n_assem_core>
+          <!-- 193/3 ~ 64 assem/batch -->
+          <n_assem_batch>64</n_assem_batch>
+          <power_cap>1150</power_cap>
+        </Reactor>
+      </config>
+  </facility>

@@ -1,0 +1,37 @@
+<!-- BWR
+
+3579 MWt // 1200 MWe // eps = 33.5%
+Coolant/Moderator = H20
+Active Core Volume (l) = 63,910 
+Avg core power density (kW/l) = 56 
+Fuel Weight (kg) = 138,000 
+Num Assem = 732
+-> weight per assem ~ 188 kg
+BU (GWd/MTU) = 27.5
+Conversion Ratio = 0.5
+Fuel array = 8 x 8
+Fuel enrichment = 2.2~2.7
+
+-->
+
+<facility>
+      <name>bwr</name>
+      <config>
+        <Reactor>
+          <fuel_inrecipes>  <val>uox_recipe</val>       </fuel_inrecipes>
+          <fuel_outrecipes> <val>used_uox_recipe</val>  </fuel_outrecipes>
+          <fuel_incommods>  <val>uox</val>                   </fuel_incommods>
+          <fuel_outcommods> <val>used_uox</val>             </fuel_outcommods>
+          <fuel_prefs>      <val>1.0</val>                   </fuel_prefs>
+          <cycle_time>18</cycle_time>
+          <!-- Average refueling was 43 days (Barq, NEI. 2012) -->
+          <refuel_time>1</refuel_time>
+          <!-- 138,000 / 732 ~ 188 -->
+          <assem_size>188</assem_size>
+          <n_assem_core>732</n_assem_core>
+          <!-- 732 / 3 = 244  assem/batch -->
+          <n_assem_batch>244</n_assem_batch>
+          <power_cap>1200</power_cap>
+        </Reactor>
+      </config>
+  </facility>
